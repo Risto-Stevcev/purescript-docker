@@ -1,5 +1,9 @@
 # purescript-docker
-Purescript build for docker :sail:
+
+[![Docker Stars](https://img.shields.io/docker/stars/gyeh/purescript.svg?maxAge=2592000)](https://hub.docker.com/r/gyeh/purescript/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/gyeh/purescript.svg?maxAge=2592000)](https://hub.docker.com/r/gyeh/purescript/)
+
+Purescript build for docker
 
 ![Purescript](https://raw.githubusercontent.com/Risto-Stevcev/purescript-docker/master/logo.png)
 
@@ -10,7 +14,7 @@ Note: You may need to run docker comands as a superuser (sudo) depending on how 
 Pull the version you want to use:
 
 ```
-$ docker pull gyeh/purescript:0.8.5
+$ docker pull gyeh/purescript:0.9.1
 ```
 
 Check to see that your image was created: 
@@ -18,7 +22,7 @@ Check to see that your image was created:
 ```
 $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-gyeh/purescript     0.8.5               b09608732ec8        0 minutes ago       829.8 MB
+gyeh/purescript     0.9.1               b09608732ec8        0 minutes ago       831.9 MB
 ```
 
 Try the Purescript REPL (you need to run it in interactive mode with a pseudo-teletype):
@@ -68,7 +72,7 @@ pureuser@1ddb0b0ed568:~/src/chapter3$ bower install
 pureuser@1ddb0b0ed568:~/src/chapter3$ pulp build
 ```
 
-It should have built successfully. Ignore the warnings -- as of the time of this writing the book hasn't been updated for 0.9.x module syntax that the compiler is mentioning will change. All examples should still build and work as expected. You can also run the tests:
+It should have built successfully. You can also run the tests:
 
 ```
 pureuser@1ddb0b0ed568:~/src/chapter3$ pulp test
