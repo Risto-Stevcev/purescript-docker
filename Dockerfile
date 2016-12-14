@@ -14,6 +14,7 @@ RUN cd /opt \
 
 ENV PATH /opt/purescript:$PATH
 
+RUN userdel node
 RUN useradd -m -s /bin/bash pureuser
 
 WORKDIR /home/pureuser
