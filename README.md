@@ -7,7 +7,11 @@ Purescript build for docker
 
 ![Purescript](https://raw.githubusercontent.com/Risto-Stevcev/purescript-docker/master/logo.png)
 
-# usage
+# Build Locally
+
+You can build the image locally by cloning the repo and running `docker build .` in the project root.
+
+# Usage
 
 Note: You may need to run docker comands as a superuser (sudo) depending on how it's configured on your system.
 
@@ -17,7 +21,7 @@ Pull the version you want to use:
 $ docker pull gyeh/purescript:0.9.1
 ```
 
-Check to see that your image was created: 
+Check to see that your image was created:
 
 ```
 $ docker images
@@ -30,9 +34,9 @@ Try the Purescript REPL (you need to run it in interactive mode with a pseudo-te
 ```
 $ docker run --rm -it b09608732ec8
  ____                 ____            _       _   
-|  _ \ _   _ _ __ ___/ ___|  ___ _ __(_)_ __ | |_ 
+|  _ \ _   _ _ __ ___/ ___|  ___ _ __(_)_ __ | |_
 | |_) | | | | '__/ _ \___ \ / __| '__| | '_ \| __|
-|  __/| |_| | | |  __/___) | (__| |  | | |_) | |_ 
+|  __/| |_| | | |  __/___) | (__| |  | | |_) | |_
 |_|    \__,_|_|  \___|____/ \___|_|  |_| .__/ \__|
                                        |_|        
 
@@ -44,11 +48,11 @@ $ docker run --rm -it b09608732ec8
 > :t "Foo"
 String
 
-> 
+>
 See ya!
 ```
 
-To start doing real work with it, you need to mount a volume to your docker container when you run it. 
+To start doing real work with it, you need to mount a volume to your docker container when you run it.
 Clone the [Purescript By Example](https://leanpub.com/purescript/read) code as an initial example:
 
 ```
@@ -85,7 +89,7 @@ Just ("Smith, John: 123 Fake St., Faketown, CA")
 
 Since you mounted the volume, you can actually edit the code outside of the running docker instance and it will update inside the container!
 
-Open up `chapter3/test/Main.purs` using your favorite editor, and update `example.address.street` in the `example` record to `"123 Foobar St."`. Now rerun the tests, and you'll see that it updated! 
+Open up `chapter3/test/Main.purs` using your favorite editor, and update `example.address.street` in the `example` record to `"123 Foobar St."`. Now rerun the tests, and you'll see that it updated!
 
 ```
 pureuser@1ddb0b0ed568:~/src/chapter3$ pulp test
