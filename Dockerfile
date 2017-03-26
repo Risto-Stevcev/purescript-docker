@@ -2,12 +2,12 @@ FROM node:4
 
 MAINTAINER Risto Stevcev
 
-ENV PURESCRIPT_DOWNLOAD_SHA1 2129ffc30e7d0de11228ba2820faa18b162886ac
+ENV PURESCRIPT_DOWNLOAD_SHA1 8592599a36ffa5ac281edb3a549b6bd0e9dea4a0
 
 RUN npm install -g bower pulp
 
 RUN cd /opt \
-    && wget https://github.com/purescript/purescript/releases/download/v0.11.0-rc.1/linux64.tar.gz \
+    && wget https://github.com/purescript/purescript/releases/download/v0.11.0/linux64.tar.gz \
     && echo "$PURESCRIPT_DOWNLOAD_SHA1 linux64.tar.gz" | sha1sum -c - \
     && tar -xvf linux64.tar.gz \
     && rm /opt/linux64.tar.gz
