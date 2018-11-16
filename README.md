@@ -18,7 +18,7 @@ Note: You may need to run docker comands as a superuser (sudo) depending on how 
 Pull the version you want to use:
 
 ```
-$ docker pull gyeh/purescript:0.9.1
+$ docker pull gyeh/purescript:0.11.0
 ```
 
 Check to see that your image was created:
@@ -26,13 +26,13 @@ Check to see that your image was created:
 ```
 $ docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-gyeh/purescript     0.9.1               b09608732ec8        0 minutes ago       831.9 MB
+gyeh/purescript     0.11.0              2537373befbf        0 minutes ago       831.9 MB
 ```
 
 Try the Purescript REPL (you need to run it in interactive mode with a pseudo-teletype):
 
 ```
-$ docker run --rm -it b09608732ec8
+$ docker run --rm -it gyeh/purescript:0.11.0
  ____                 ____            _       _   
 |  _ \ _   _ _ __ ___/ ___|  ___ _ __(_)_ __ | |_
 | |_) | | | | '__/ _ \___ \ / __| '__| | '_ \| __|
@@ -64,7 +64,7 @@ Checking connectivity... done.
 Then mount the volume using the absolute path of the cloned repo to the `/home/pureuser/src` folder in the container:
 
 ```
-$ docker run --rm -itv ~/git/purescript/tmp/purescript-book/:/home/pureuser/src b09608732ec8 bash
+$ docker run --rm -itv ~/git/purescript/tmp/purescript-book/:/home/pureuser/src gyeh/purescript:0.11.0 bash
 pureuser@1ddb0b0ed568:~$ ls
 src  tmp
 pureuser@1ddb0b0ed568:~$ cd src/
